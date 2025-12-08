@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ApartmentOwnerManageBillingSystem from '../../component/ApartmentOwner/ApartmentOwnerManageBillingSystem';
+import ApartmentOwnerRenterTracker from '../../component/ApartmentOwner/ApartmentOwnerRenterTracker';
 
 const Apartmentdetails = () => {
     // State for Modal Visibility
@@ -24,7 +25,7 @@ const Apartmentdetails = () => {
                 <FaAngleLeft />  Apartment details
             </Link>
 
-            <div className='max-w-[650px] my-5'>
+            <div className='max-w-[60%] my-5'>
                 {/* Apartment Image */}
                 <img className="w-full h-[300px] rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
 
@@ -62,61 +63,63 @@ const Apartmentdetails = () => {
                 </div>
 
 
-
-            </div>
-
-            {/* Apartment Unit List Section */}
-            <div className="space-y-3 my-5">
-                <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment  Facilities</span>
-                <div className="grid grid-cols-8 gap-3 mt-3">
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Garden</span>
-                    </div>
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Parking</span>
-                    </div>
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Parking</span>
-                    </div>
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Parking</span>
+                <div className="space-y-3 my-5">
+                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment  Facilities</span>
+                    <div className="grid grid-cols-4 gap-3 mt-3">
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>Garden</span>
+                        </div>
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>Parking</span>
+                        </div>
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>Parking</span>
+                        </div>
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>Parking</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="space-y-3 my-5">
-                <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Unit list </span>
-                <div className="grid grid-cols-8 gap-3 mt-3">
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Studio (4)</span>
-                    </div>
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Bed room (4)</span>
-                    </div>
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>2 Bed room (4)</span>
-                    </div>
-                    <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                        <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Pent house (4)</span>
+                <div className="space-y-3 my-5">
+                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Unit list </span>
+                    <div className="grid grid-cols-4 gap-3 mt-3">
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>Studio (4)</span>
+                        </div>
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>Bed room (4)</span>
+                        </div>
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>2 Bed room (4)</span>
+                        </div>
+                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                            <hr className='mt-3 mb-2' />
+                            <span className='border-b-2 border-[#222222]'>Pent house (4)</span>
+                        </div>
                     </div>
                 </div>
+                <ApartmentOwnerManageBillingSystem />
+
+                <ApartmentOwnerRenterTracker />
+
             </div>
+
 
             {/* Modal for Apartment Details */}
             <Modal
@@ -190,7 +193,7 @@ const Apartmentdetails = () => {
 
             </Modal>
 
-            <ApartmentOwnerManageBillingSystem />
+
 
 
         </div>
