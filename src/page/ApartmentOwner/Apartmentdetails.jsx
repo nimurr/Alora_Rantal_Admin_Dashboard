@@ -1,8 +1,7 @@
 import { Modal } from 'antd';
 import React, { useState } from 'react';
-import { FaAngleLeft, FaChevronDown } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { IoEyeOutline } from 'react-icons/io5';
+import { FaAngleLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; 
 
 const Apartmentdetails = () => {
     // State for Modal Visibility
