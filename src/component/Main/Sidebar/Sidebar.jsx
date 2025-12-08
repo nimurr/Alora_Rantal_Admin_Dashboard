@@ -28,14 +28,19 @@ const sidebarItems = [
     icon: <MdDashboard className="size-6" />,
   },
   {
-    path: "/users",
-    name: "User list",
+    path: "/roles",
+    name: "Roles",
     icon: <FaUserAlt className="size-5" />,
   },
+  // {
+  //   path: "/users",
+  //   name: "User list",
+  //   icon: <FaUserAlt className="size-5" />,
+  // },
 
   {
-    path: "/apartment-list",
-    name: "Apartment  list",
+    path: "/apartment-owner",
+    name: "Apartment  Woners",
     icon: <BiSolidSchool className="size-6" />,
   },
   {

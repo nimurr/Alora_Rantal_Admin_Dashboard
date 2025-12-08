@@ -63,6 +63,7 @@ import ApartmentList from "../page/ApartmentList/ApartmentList";
 import ApartmentListDetails from "../page/ApartmentList/ApartmentListDetails";
 import MonthlyBillStatment from "../page/MonthlyBillStatment/MonthlyBillStatment";
 import MonthlyBillStatmentDetails from "../page/MonthlyBillStatment/MonthlyBillStatmentDetails";
+import AllRoles from "../page/AllRoles/AllRoles";
 
 
 
@@ -82,6 +83,18 @@ const router = createBrowserRouter([
         index: true,
         element: <DashboardHome />,
       },
+      {
+        path: "roles",
+        element: <AllRoles />,
+      },
+      {
+        path: "apartment-owner",
+        element: <ApartmentOwner />,
+      },
+
+
+
+
       {
         path: "users",
         element: <UsersPage />,

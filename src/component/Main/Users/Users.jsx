@@ -95,6 +95,7 @@ const Users = () => {
           <FaAngleLeft />  User list  {detailsVisible ? "Details" : ""}
         </Link>
         <Form layout="inline" className="flex space-x-4">
+
           <Item name="date">
             <DatePicker
               className="rounded-md border border-[#92b8c0]"

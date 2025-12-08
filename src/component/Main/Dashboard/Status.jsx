@@ -6,7 +6,7 @@ const Status = () => {
   const { data, isLoading } = useGetDashboardStatusQuery();
 
   return (
-    <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
       {/* Total Renter User Card */}
       <div className="shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-5 rounded-lg border-2 border-[#2cb5eb] bg-white">
@@ -35,11 +35,27 @@ const Status = () => {
           <h1>Last month total  1050</h1>
         </div>
       </div>
+
+      {/* Total Maintenance crew Card */}
+      <div className="shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-5 rounded-lg border-2 border-[#2cb5eb] bg-white">
+        <div className="flex items-center gap-5 ">
+          <img src={dashboardIcon} className="w-16" alt="" />
+          <h2 className="text-2xl font-semibold">Maintenance crew</h2>
+        </div>
+        <div className="flex items-center mt-5 gap-3">
+          <h1 className="text-4xl font-semibold text-[#222222]">
+            {data?.totalNumberOfUser || "500"}
+          </h1>
+          {/* <p className="bg-[#19f1361f] text-[#159726] rounded-lg px-2 py-1 flex items-center gap-1"> <FaArrowTrendUp className="text-[#159726]" /> 20%</p> */}
+          {/* <h1>Last month total  1050</h1> */}
+        </div>
+      </div>
+
       {/* Total Renter User Card */}
       <div className="shadow-[0_4px_10px_rgba(0,0,0,0.2)] p-5 rounded-lg border-2 border-[#2cb5eb] bg-white">
         <div className="flex items-center gap-5">
           <img src={dashboardIcon} className="w-16" alt="" />
-          <h2 className="text-2xl font-semibold">Total  Apartment Creator</h2>
+          <h2 className="text-2xl font-semibold">Total Agent</h2>
         </div>
         <div className="flex items-center mt-5 gap-3">
           <h1 className="text-4xl font-semibold text-[#222222]">

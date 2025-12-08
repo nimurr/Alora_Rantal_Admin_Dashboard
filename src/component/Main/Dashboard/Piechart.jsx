@@ -70,7 +70,7 @@ const Piechart =() =>{
  
           {/* P&L Text */}
           <div>
-            <h3 className="text-xl font-bold text-gray-900 mb-1">U&D</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-1">P&L</h3>
             <p className="text-xs text-gray-500">Users and Drivers ratio</p>
           </div>
         </div>
