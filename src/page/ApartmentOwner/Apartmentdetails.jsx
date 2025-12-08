@@ -1,7 +1,7 @@
 import { Modal } from 'antd';
 import React, { useState } from 'react';
 import { FaAngleLeft } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 const Apartmentdetails = () => {
     // State for Modal Visibility
@@ -34,36 +34,6 @@ const Apartmentdetails = () => {
                         <p>100 Smart Street, LA, USA</p>
                     </div>
                 </div>
-
-                {/* Apartment Description */}
-                <div className="space-y-3 mt-5">
-                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Description</span>
-                    <p>
-                        Welcome to Suncity Apartments, where comfort meets convenience. Located in a prime urban neighborhood, Suncity offers stylish 1, 2, and 3-bedroom units designed for modern living.
-                        Each apartment features spacious layouts, large windows with natural light, fully equipped kitchens, premium fittings, and private balconies with stunning city views.
-                    </p>
-                </div>
-
-                {/* Apartment Facilities */}
-                <div className="space-y-3 mt-5">
-                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Facilities</span>
-                    <div className='flex gap-3'>
-                        <button className='flex items-center gap-2 bg-gradient-to-tl from-[#39ceec] to-[#125461] text-white py-2 px-5 rounded-full'>
-                            <img src="/Apartment/icons/scal.png" alt="" /> 1600 Sq ft
-                        </button>
-                        <button className='flex items-center gap-2 bg-gradient-to-tl from-[#39ceec] to-[#125461] text-white py-2 px-5 rounded-full'>
-                            <img src="/Apartment/icons/car.png" alt="" /> Parking
-                        </button>
-                        <button className='flex items-center gap-2 bg-gradient-to-tl from-[#39ceec] to-[#125461] text-white py-2 px-5 rounded-full'>
-                            <img src="/Apartment/icons/ground.png" alt="" /> Garden
-                        </button>
-                        <button className='flex items-center gap-2 bg-gradient-to-tl from-[#39ceec] to-[#125461] text-white py-2 px-5 rounded-full'>
-                            <img src="/Apartment/icons/left.png" alt="" /> Lift
-                        </button>
-                    </div>
-                </div>
-
-                {/* Apartment Image Gallery */}
                 <div className="space-y-3 mt-5">
                     <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Images</span>
                     <div className="grid grid-cols-4 gap-3 mt-3">
@@ -74,31 +44,49 @@ const Apartmentdetails = () => {
                     </div>
                 </div>
 
+                {/* Apartment Description */}
+                <div className="space-y-3 mt-5">
+                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Description</span>
+                    <p>
+                        Welcome to Suncity Apartments, where comfort meets convenience. Located in a prime urban neighborhood, Suncity offers stylish 1, 2, and 3-bedroom units designed for modern living.
+                        Each apartment features spacious layouts, large windows with natural light, fully equipped kitchens, premium fittings, and private balconies with stunning city views.
+                    </p>
+                </div>
+
+                <div className="space-y-3 mt-5">
+                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Parking Type</span>
+                    <p>
+                        Street Parking
+                    </p>
+                </div>
+
+
+
             </div>
 
             {/* Apartment Unit List Section */}
             <div className="space-y-3 my-5">
-                <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Unit List</span>
+                <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment  Facilities</span>
                 <div className="grid grid-cols-8 gap-3 mt-3">
                     <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
                         <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
                         <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Studio</span>
+                        <span className='border-b-2 border-[#222222]'>Garden</span>
                     </div>
                     <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
                         <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
                         <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Studio</span>
+                        <span className='border-b-2 border-[#222222]'>Parking</span>
                     </div>
                     <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
                         <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
                         <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Studio</span>
+                        <span className='border-b-2 border-[#222222]'>Parking</span>
                     </div>
                     <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
                         <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
                         <hr className='mt-3 mb-2' />
-                        <span className='border-b-2 border-[#222222]'>Studio</span>
+                        <span className='border-b-2 border-[#222222]'>Parking</span>
                     </div>
                 </div>
             </div>
