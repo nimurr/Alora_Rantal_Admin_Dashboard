@@ -46,7 +46,7 @@ const ApartmentOwnerRenterTracker = () => {
             <div className="mt-4">
                 {activeTab === 'moveIn' && (
                     <div>
-                        
+
                         <h3 className="text-xl font-bold">Move In Details</h3>
                         <p><strong>Unit:</strong> {unitData.unit} ({unitData.type})</p>
                         <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
