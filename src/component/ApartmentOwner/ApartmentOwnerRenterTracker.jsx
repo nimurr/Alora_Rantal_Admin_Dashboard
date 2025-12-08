@@ -21,21 +21,21 @@ const ApartmentOwnerRenterTracker = () => {
     return (
         <div className="w-full mx-auto bg-white rounded-lg shadow-md p-4">
             {/* Tabs */}
-            <div className="flex border-b-2 justify-center border-gray-300">
+            <div className="flex border-b-2 justify-center font-semibold border-[#2cb5eb57]">
                 <button
-                    className={`w-full text-lg ${activeTab === 'moveIn' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'}`}
+                    className={`w-full text-lg ${activeTab === 'moveIn' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
                     onClick={() => handleTabClick('moveIn')}
                 >
                     Move In
                 </button>
                 <button
-                    className={`w-full text-lg ${activeTab === 'moveOut' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'}`}
+                    className={`w-full text-lg ${activeTab === 'moveOut' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
                     onClick={() => handleTabClick('moveOut')}
                 >
                     Move Out
                 </button>
                 <button
-                    className={`w-full text-lg ${activeTab === 'reserved' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-500'}`}
+                    className={`w-full text-lg ${activeTab === 'reserved' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
                     onClick={() => handleTabClick('reserved')}
                 >
                     Reserved
@@ -46,6 +46,7 @@ const ApartmentOwnerRenterTracker = () => {
             <div className="mt-4">
                 {activeTab === 'moveIn' && (
                     <div>
+                        
                         <h3 className="text-xl font-bold">Move In Details</h3>
                         <p><strong>Unit:</strong> {unitData.unit} ({unitData.type})</p>
                         <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
