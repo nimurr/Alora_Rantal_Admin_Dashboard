@@ -23,19 +23,19 @@ const ApartmentOwnerRenterTracker = () => {
             {/* Tabs */}
             <div className="flex border-b-2 justify-center font-semibold border-[#2cb5eb57]">
                 <button
-                    className={`w-full text-lg ${activeTab === 'moveIn' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
+                    className={`w-full py-2 text-lg ${activeTab === 'moveIn' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
                     onClick={() => handleTabClick('moveIn')}
                 >
                     Move In
                 </button>
                 <button
-                    className={`w-full text-lg ${activeTab === 'moveOut' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
+                    className={`w-full py-2 text-lg ${activeTab === 'moveOut' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
                     onClick={() => handleTabClick('moveOut')}
                 >
                     Move Out
                 </button>
                 <button
-                    className={`w-full text-lg ${activeTab === 'reserved' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
+                    className={`w-full py-2 text-lg ${activeTab === 'reserved' ? 'border-b-2 border-[#2cb5eb] text-[#2cb5eb]' : 'text-gray-500'}`}
                     onClick={() => handleTabClick('reserved')}
                 >
                     Reserved
