@@ -87,12 +87,14 @@ const router = createBrowserRouter([
         path: "roles",
         element: <AllRoles />,
       },
+
+
       {
-        path: "apartment-owner",
+        path: "roles/apartment-owner",
         element: <ApartmentOwner />,
       },
       {
-        path: "apartment-owner/apartment-details/:id",
+        path: "roles/apartment-owner/apartment-details/:id",
         element: <Apartmentdetails />,
       },
 

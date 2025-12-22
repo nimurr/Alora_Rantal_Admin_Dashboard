@@ -38,13 +38,13 @@ const sidebarItems = [
   //   icon: <FaUserAlt className="size-5" />,
   // },
 
-  {
-    path: "/apartment-owner",
-    name: "Apartment  Woners",
-    icon: <BiSolidSchool className="size-6" />,
-  },
+  // {
+  //   path: "/apartment-owner",
+  //   name: "Apartment  Woners",
+  //   icon: <BiSolidSchool className="size-6" />,
+  // },
 
-  
+
   {
     path: "/apartment-create",
     name: "Apartment Create",

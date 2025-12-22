@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaChevronLeft, FaChevronRight, FaFilter } from 'react-icons/fa';
 
 const ApartmentOwnerRenterTracker = () => {
     // State to manage which tab is active
@@ -46,27 +47,143 @@ const ApartmentOwnerRenterTracker = () => {
             <div className="mt-4">
                 {activeTab === 'moveIn' && (
                     <div>
+                        <div className='bg-gray-200 rounded-lg flex items-center justify-around py-3'>
+                            <FaChevronLeft className='cursor-pointer text-xl' />
+                            <span>Fab 2025</span>
+                            <FaChevronRight className='cursor-pointer text-xl' />
+                        </div>
+                        <div className='my-10 flex items-center justify-between flex-wrap gap-20'>
+                            <input className='w-auto md:min-w-[400px] border border-[#2cb5eb] py-2 px-3 rounded-lg' type="text" placeholder="Search Unit/Name/Renter Name" />
+                            <div className='w-12 h-12 bg-[#2cb5eb] flex items-center justify-center rounded-full cursor-pointer '>
+                                <FaFilter className='text-xl text-white' />
+                            </div>
+                        </div>
 
-                        <h3 className="text-xl font-bold">Move In Details</h3>
-                        <p><strong>Unit:</strong> {unitData.unit} ({unitData.type})</p>
-                        <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
-                        <p><strong>Renter Name:</strong> {unitData.moveIn.renter}</p>
+                        <div className='border p-5 rounded-lg border-gray-200'>
+                            <img className='h-40 w-full object-cover rounded-lg mb-2' src="/category/category.png" alt="" />
+                            <div className='flex items-center justify-between text-xl font-semibold'>
+                                <span>
+                                    <strong className='text-xl mr-2'>Unit:</strong>
+                                    {unitData.unit}
+                                </span>
+                                <span>({unitData.type})</span>
+                            </div>
+                            <hr className='my-3' />
+                            <div className=' text-lg flex items-center justify-between'>
+                                <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
+                                <p className='bg-[#2cb5eb] px-3 py-1 rounded-lg text-white cursor-pointer hover:bg-[#2cb5ebb0]'>{unitData.moveIn.renter}</p>
+                            </div>
+                        </div>
+
+                        <div className='border p-5 rounded-lg border-gray-200'>
+                            <img className='h-40 w-full object-cover rounded-lg mb-2' src="/category/category.png" alt="" />
+                            <div className='flex items-center justify-between text-xl font-semibold'>
+                                <span>
+                                    <strong className='text-xl mr-2'>Unit:</strong>
+                                    {unitData.unit}
+                                </span>
+                                <span>({unitData.type})</span>
+                            </div>
+                            <hr className='my-3' />
+                            <div className=' text-lg flex items-center justify-between'>
+                                <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
+                                <p className='bg-[#2cb5eb] px-3 py-1 rounded-lg text-white cursor-pointer hover:bg-[#2cb5ebb0]'>{unitData.moveIn.renter}</p>
+                            </div>
+                        </div>
                     </div>
                 )}
                 {activeTab === 'moveOut' && (
                     <div>
-                        <h3 className="text-xl font-bold">Move Out Details</h3>
-                        <p><strong>Unit:</strong> {unitData.unit} ({unitData.type})</p>
-                        <p><strong>Move Out Date:</strong> {unitData.moveOut.date}</p>
-                        <p><strong>Renter Name:</strong> {unitData.moveOut.renter}</p>
+                        <div className='bg-gray-200 rounded-lg flex items-center justify-around py-3'>
+                            <FaChevronLeft className='cursor-pointer text-xl' />
+                            <span>Fab 2025</span>
+                            <FaChevronRight className='cursor-pointer text-xl' />
+                        </div>
+                        <div className='my-10 flex items-center justify-between flex-wrap gap-20'>
+                            <input className='w-auto md:min-w-[400px] border border-[#2cb5eb] py-2 px-3 rounded-lg' type="text" placeholder="Search Unit/Name/Renter Name" />
+                            <div className='w-12 h-12 bg-[#2cb5eb] flex items-center justify-center rounded-full cursor-pointer '>
+                                <FaFilter className='text-xl text-white' />
+                            </div>
+                        </div>
+
+                        <div className='border p-5 rounded-lg border-gray-200'>
+                            <img className='h-40 w-full object-cover rounded-lg mb-2' src="/category/category.png" alt="" />
+                            <div className='flex items-center justify-between text-xl font-semibold'>
+                                <span>
+                                    <strong className='text-xl mr-2'>Unit:</strong>
+                                    {unitData.unit}
+                                </span>
+                                <span>({unitData.type})</span>
+                            </div>
+                            <hr className='my-3' />
+                            <div className=' text-lg flex items-center justify-between'>
+                                <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
+                                <p className='bg-[#2cb5eb] px-3 py-1 rounded-lg text-white cursor-pointer hover:bg-[#2cb5ebb0]'>{unitData.moveIn.renter}</p>
+                            </div>
+                        </div>
+
+                        <div className='border p-5 rounded-lg border-gray-200'>
+                            <img className='h-40 w-full object-cover rounded-lg mb-2' src="/category/category.png" alt="" />
+                            <div className='flex items-center justify-between text-xl font-semibold'>
+                                <span>
+                                    <strong className='text-xl mr-2'>Unit:</strong>
+                                    {unitData.unit}
+                                </span>
+                                <span>({unitData.type})</span>
+                            </div>
+                            <hr className='my-3' />
+                            <div className=' text-lg flex items-center justify-between'>
+                                <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
+                                <p className='bg-[#2cb5eb] px-3 py-1 rounded-lg text-white cursor-pointer hover:bg-[#2cb5ebb0]'>{unitData.moveIn.renter}</p>
+                            </div>
+                        </div>
                     </div>
                 )}
                 {activeTab === 'reserved' && (
                     <div>
-                        <h3 className="text-xl font-bold">Reserved Details</h3>
-                        <p><strong>Unit:</strong> {unitData.unit} ({unitData.type})</p>
-                        <p><strong>Reserved Date:</strong> {unitData.reserved.date}</p>
-                        <p><strong>Renter Name:</strong> {unitData.reserved.renter}</p>
+                        <div className='bg-gray-200 rounded-lg flex items-center justify-around py-3'>
+                            <FaChevronLeft className='cursor-pointer text-xl' />
+                            <span>Fab 2025</span>
+                            <FaChevronRight className='cursor-pointer text-xl' />
+                        </div>
+                        <div className='my-10 flex items-center justify-between flex-wrap gap-20'>
+                            <input className='w-auto md:min-w-[400px] border border-[#2cb5eb] py-2 px-3 rounded-lg' type="text" placeholder="Search Unit/Name/Renter Name" />
+                            <div className='w-12 h-12 bg-[#2cb5eb] flex items-center justify-center rounded-full cursor-pointer '>
+                                <FaFilter className='text-xl text-white' />
+                            </div>
+                        </div>
+
+                        <div className='border p-5 rounded-lg border-gray-200'>
+                            <img className='h-40 w-full object-cover rounded-lg mb-2' src="/category/category.png" alt="" />
+                            <div className='flex items-center justify-between text-xl font-semibold'>
+                                <span>
+                                    <strong className='text-xl mr-2'>Unit:</strong>
+                                    {unitData.unit}
+                                </span>
+                                <span>({unitData.type})</span>
+                            </div>
+                            <hr className='my-3' />
+                            <div className=' text-lg flex items-center justify-between'>
+                                <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
+                                <p className='bg-[#2cb5eb] px-3 py-1 rounded-lg text-white cursor-pointer hover:bg-[#2cb5ebb0]'>{unitData.moveIn.renter}</p>
+                            </div>
+                        </div>
+
+                        <div className='border p-5 rounded-lg border-gray-200'>
+                            <img className='h-40 w-full object-cover rounded-lg mb-2' src="/category/category.png" alt="" />
+                            <div className='flex items-center justify-between text-xl font-semibold'>
+                                <span>
+                                    <strong className='text-xl mr-2'>Unit:</strong>
+                                    {unitData.unit}
+                                </span>
+                                <span>({unitData.type})</span>
+                            </div>
+                            <hr className='my-3' />
+                            <div className=' text-lg flex items-center justify-between'>
+                                <p><strong>Move In Date:</strong> {unitData.moveIn.date}</p>
+                                <p className='bg-[#2cb5eb] px-3 py-1 rounded-lg text-white cursor-pointer hover:bg-[#2cb5ebb0]'>{unitData.moveIn.renter}</p>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
