@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function ApartmentdetailsAddMoreOverOthers() {
     return (
@@ -26,7 +27,7 @@ export default function ApartmentdetailsAddMoreOverOthers() {
                                     <p>12133366666</p>
                                     <span>support@gmail.com</span>
                                 </div>
-                                <button className='w-1/2 bolck text-end'>Details</button>
+                                <Link to={`/roles/apartment-owner/unit-list-details/${item}`} className='w-1/2 bolck text-end'>Details</Link>
                             </div>
                         ))
                     }
@@ -47,7 +48,7 @@ export default function ApartmentdetailsAddMoreOverOthers() {
                                     <p>12133366666</p>
                                     <span>support@gmail.com</span>
                                 </div>
-                                <button className='w-1/2 bolck text-end'>Details</button>
+                                <Link to={`/roles/apartment-owner/unit-list-details/${item}`} className='w-1/2 bolck text-end'>Details</Link>
                             </div>
                         ))
                     }

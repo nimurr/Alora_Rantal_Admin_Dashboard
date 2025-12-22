@@ -64,6 +64,7 @@ import ApartmentListDetails from "../page/ApartmentList/ApartmentListDetails";
 import MonthlyBillStatment from "../page/MonthlyBillStatment/MonthlyBillStatment";
 import MonthlyBillStatmentDetails from "../page/MonthlyBillStatment/MonthlyBillStatmentDetails";
 import AllRoles from "../page/AllRoles/AllRoles";
+import ApartmentdetailsUnitlistdetails from "../component/ApartmentOwner/ApartmentdetailsUnitlistdetails";
 
 
 
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
       {
         path: "roles/apartment-owner/apartment-details/:id",
         element: <Apartmentdetails />,
+      },
+      {
+        path: "roles/apartment-owner/unit-list-details/:id",
+        element: <ApartmentdetailsUnitlistdetails />,
       },
 
 
