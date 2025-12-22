@@ -4,6 +4,8 @@ import { FaAngleLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import ApartmentOwnerManageBillingSystem from '../../component/ApartmentOwner/ApartmentOwnerManageBillingSystem';
 import ApartmentOwnerRenterTracker from '../../component/ApartmentOwner/ApartmentOwnerRenterTracker';
+import ApartmentdetailsRightSide from '../../component/ApartmentOwner/ApartmentdetailsRightSide';
+import ApartmentdetailsAddMoreOverOthers from '../../component/ApartmentOwner/ApartmentdetailsAddMoreOverOthers';
 
 const Apartmentdetails = () => {
     // State for Modal Visibility
@@ -25,99 +27,105 @@ const Apartmentdetails = () => {
                 <FaAngleLeft />  Apartment details
             </Link>
 
-            <div className='max-w-[60%] my-5'>
-                {/* Apartment Image */}
-                <img className="w-full h-[300px] rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
+            <div className='flex items-start gap-10'>
+                <div className='max-w-[70%] my-5'>
+                    {/* Apartment Image */}
+                    <img className="w-full h-[300px] rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
 
-                {/* Apartment Info */}
-                <div className="flex items-center justify-between my-5">
-                    <div>
-                        <h2 className="text-2xl font-semibold">Driftwood Apartment</h2>
-                        <p>100 Smart Street, LA, USA</p>
-                    </div>
-                </div>
-                <div className="space-y-3 mt-5">
-                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Images</span>
-                    <div className="grid grid-cols-4 gap-3 mt-3">
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
-                        <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
-                    </div>
-                </div>
-
-                {/* Apartment Description */}
-                <div className="space-y-3 mt-5">
-                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Description</span>
-                    <p>
-                        Welcome to Suncity Apartments, where comfort meets convenience. Located in a prime urban neighborhood, Suncity offers stylish 1, 2, and 3-bedroom units designed for modern living.
-                        Each apartment features spacious layouts, large windows with natural light, fully equipped kitchens, premium fittings, and private balconies with stunning city views.
-                    </p>
-                </div>
-
-                <div className="space-y-3 mt-5">
-                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Parking Type</span>
-                    <p>
-                        Street Parking
-                    </p>
-                </div>
-
-
-                <div className="space-y-3 my-5">
-                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment  Facilities</span>
-                    <div className="grid grid-cols-4 gap-3 mt-3">
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>Garden</span>
-                        </div>
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>Parking</span>
-                        </div>
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>Parking</span>
-                        </div>
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>Parking</span>
+                    {/* Apartment Info */}
+                    <div className="flex items-center justify-between my-5">
+                        <div>
+                            <h2 className="text-2xl font-semibold">Driftwood Apartment</h2>
+                            <p>100 Smart Street, LA, USA</p>
                         </div>
                     </div>
-                </div>
-
-                <div className="space-y-3 my-5">
-                    <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Unit list </span>
-                    <div className="grid grid-cols-4 gap-3 mt-3">
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>Studio (4)</span>
-                        </div>
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>Bed room (4)</span>
-                        </div>
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>2 Bed room (4)</span>
-                        </div>
-                        <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
-                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
-                            <hr className='mt-3 mb-2' />
-                            <span className='border-b-2 border-[#222222]'>Pent house (4)</span>
+                    <div className="space-y-3 mt-5">
+                        <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Images</span>
+                        <div className="grid grid-cols-4 gap-3 mt-3">
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
+                            <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
                         </div>
                     </div>
+
+                    {/* Apartment Description */}
+                    <div className="space-y-3 mt-5">
+                        <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment Description</span>
+                        <p>
+                            Welcome to Suncity Apartments, where comfort meets convenience. Located in a prime urban neighborhood, Suncity offers stylish 1, 2, and 3-bedroom units designed for modern living.
+                            Each apartment features spacious layouts, large windows with natural light, fully equipped kitchens, premium fittings, and private balconies with stunning city views.
+                        </p>
+                    </div>
+
+                    <div className="space-y-3 mt-5">
+                        <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Parking Type</span>
+                        <p>
+                            Street Parking
+                        </p>
+                    </div>
+
+
+                    <div className="space-y-3 my-5">
+                        <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Apartment  Facilities</span>
+                        <div className="grid grid-cols-4 gap-3 mt-3">
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>Garden</span>
+                            </div>
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>Parking</span>
+                            </div>
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>Parking</span>
+                            </div>
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>Parking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="space-y-3 my-5">
+                        <span className="text-2xl font-semibold border-b-2 border-[#39ceec]">Unit list </span>
+                        <div className="grid grid-cols-4 gap-3 mt-3">
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>Studio (4)</span>
+                            </div>
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>Bed room (4)</span>
+                            </div>
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>2 Bed room (4)</span>
+                            </div>
+                            <div onClick={handleShowModal} className='border cursor-pointer border-[#39ceec] p-2 rounded-lg'>
+                                <img className="w-full rounded-lg" src="/Apartment/image-1.jpg" alt="Studio" />
+                                <hr className='mt-3 mb-2' />
+                                <span className='border-b-2 border-[#222222]'>Pent house (4)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <ApartmentOwnerManageBillingSystem />
+
+                    <ApartmentOwnerRenterTracker />
+
                 </div>
-                <ApartmentOwnerManageBillingSystem />
-
-                <ApartmentOwnerRenterTracker />
-
+                <div className='w-full'>
+                    <ApartmentdetailsRightSide />
+                    <ApartmentdetailsAddMoreOverOthers />
+                </div>
             </div>
 
 
