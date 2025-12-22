@@ -67,6 +67,7 @@ import AllRoles from "../page/AllRoles/AllRoles";
 import ApartmentdetailsUnitlistdetails from "../component/ApartmentOwner/ApartmentdetailsUnitlistdetails";
 import RenterUserList from "../page/RenterUserList/RenterUserList";
 import RenterUserListAddPersonalixeFee from "../page/RenterUserList/RenterUserListAddPersonalixeFee";
+import MaintenceCrew from "../page/MaintenceCrew/MaintenceCrew";
 
 
 
@@ -117,6 +118,12 @@ const router = createBrowserRouter([
         path: "roles/renter-user/account-details/renter-user-add-personalize-fee/:id",
         element: <RenterUserListAddPersonalixeFee />,
       },
+      
+      {
+        path: "roles/maintence-crew",
+        element: <MaintenceCrew />,
+      },
+
 
 
       {
