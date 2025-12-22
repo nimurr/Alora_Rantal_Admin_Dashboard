@@ -19,7 +19,7 @@ export default function UserDetails() {
       </Link>
 
       {/* ================= ROW 1 ================= */}
-      <div className="grid grid-cols-1 items-start lg:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 items-start lg:grid-cols-3 gap-6">
         {/* Application Fee */}
         <div className="border rounded-xl bg-white p-4 shadow-sm">
           <h3 className="bg-sky-500 text-white text-center py-2 rounded-md mb-4">
@@ -93,9 +93,9 @@ export default function UserDetails() {
           </div>
         </div>
       </div>
-
+      <hr className=" my-8" />
       {/* ================= ROW 2 ================= */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 items-start lg:grid-cols-2 gap-6">
         {/* Payment History */}
         <div className="border rounded-xl bg-white p-4 shadow-sm">
           <h3 className="font-semibold mb-4">Payment History</h3>
@@ -105,7 +105,7 @@ export default function UserDetails() {
               <span>Amount</span>
               <span>Date</span>
             </div>
-            {[1, 2, 3].map((i) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
               <div key={i} className="grid grid-cols-3 text-sm p-2 border-b">
                 <span>1234 5678</span>
                 <span>$1959.90</span>
@@ -117,9 +117,43 @@ export default function UserDetails() {
 
         {/* Bill Statement */}
         <div className="border rounded-xl bg-white p-4 shadow-sm">
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between items-center mb-4">
             <h3 className="font-semibold">Bill Statement</h3>
-            <input type="date" className="border px-3 py-1 rounded-md text-sm" />
+            <button className="border px-3 py-1 rounded-md text-sm">
+              <input type="date" className="outline-none" />
+            </button>
+          </div>
+
+          <div className="bg-green-500 text-white p-2 rounded-md flex justify-between text-sm mb-3">
+            <span>Jan 1, 2025</span>
+            <span>Payment Success</span>
+          </div>
+
+          {[
+            "Gas Bill",
+            "Water Bill",
+            "Utility Administration Fee",
+            "Trash Reimbursement",
+            "Renters Insurance",
+            "Parking Rent",
+            "Pest Control Bill",
+          ].map((item) => (
+            <div
+              key={item}
+              className="flex justify-between text-sm border-b py-2"
+            >
+              <span>{item}</span>
+              <span>$150.99</span>
+            </div>
+          ))}
+
+          <div className="flex justify-end font-semibold mt-4">
+            Total balance : $ 1959.90
+          </div>
+
+          <div className="border rounded-md p-3 mt-4 text-sm">
+            <span className="font-semibold">Transaction ID</span>
+            <p>1234 5678 2345</p>
           </div>
         </div>
       </div>
@@ -152,9 +186,9 @@ export default function UserDetails() {
           </ul>
 
           <div className="flex flex-col items-end mt-4">
-            <button className="bg-sky-500 text-white px-6 py-2 rounded-lg mb-2">
+            <Link to={`/roles/renter-user/account-details/renter-user-add-personalize-fee/2`} className="bg-sky-500 text-white px-6 py-2 rounded-lg mb-2">
               Add Another Fee
-            </button>
+            </Link>
             <h3 className="font-semibold">
               Total: <span className="text-xl">$100.90</span>
             </h3>
@@ -177,9 +211,9 @@ export default function UserDetails() {
             ))}
           </ul>
           <div className="flex flex-col items-end mt-4">
-            <button className="bg-sky-500 text-white px-6 py-2 rounded-lg mb-2">
+            <Link to={`/roles/renter-user/account-details/renter-user-add-personalize-fee/2`} className="bg-sky-500 text-white px-6 py-2 rounded-lg mb-2">
               Add Another Fee
-            </button>
+            </Link>
             <h3 className="font-semibold">
               Total: <span className="text-xl">$100.90</span>
             </h3>
@@ -204,3 +238,5 @@ const InputBox = ({ label, value }) => (
     <span>{value}</span>
   </div>
 );
+
+
