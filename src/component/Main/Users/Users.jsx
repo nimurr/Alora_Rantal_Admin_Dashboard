@@ -185,10 +185,10 @@ const Users = () => {
               label="Joining Date"
               value={moment(selectedUser.joiningDate).format("DD MMM YYYY")}
             />
-            <button className="mt-4 font-semibold bg-[#2cb5eb57] p-2 justify-between w-full  rounded-md flex items-center gap-2">
+            <Link to={`/roles/renter-user/account-details/${selectedUser.id}`} className="mt-4 font-semibold bg-[#2cb5eb57] p-2 justify-between w-full  rounded-md flex items-center gap-2">
                <span>Account Details</span>
                <span className="underline">View</span>
-            </button>
+            </Link>
           </div>
         )}
       </Modal>

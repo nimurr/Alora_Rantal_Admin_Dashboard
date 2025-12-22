@@ -110,10 +110,10 @@ const router = createBrowserRouter([
       },
       {
 
-        path: "users/:id",
+        path: "roles/renter-user/account-details/:id",
         element: <UserDetails />,
       },
-      
+
 
       {
         path: "agent",
