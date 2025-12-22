@@ -185,8 +185,9 @@ const Users = () => {
               label="Joining Date"
               value={moment(selectedUser.joiningDate).format("DD MMM YYYY")}
             />
-            <button>
-              <Detail label="Account details" value={selectedUser.phoneNumber} />
+            <button className="mt-4 font-semibold bg-[#2cb5eb57] p-2 justify-between w-full  rounded-md flex items-center gap-2">
+               <span>Account Details</span>
+               <span className="underline">View</span>
             </button>
           </div>
         )}
