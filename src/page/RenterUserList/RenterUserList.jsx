@@ -1,7 +1,7 @@
 import Users from '../../component/Main/Users/Users'
 
-const UsersPage = () => {
+const RenterUserList = () => {
   return <Users/>
 }
 
-export default UsersPage
+export default RenterUserList

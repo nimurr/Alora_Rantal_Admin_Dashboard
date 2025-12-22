@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { Modal, Input, Select, Upload, Button } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const { Option } = Select;
 
@@ -21,10 +22,10 @@ export default function ApartmentdetailsUnitlistdetails() {
         <div className="py-6 min-h-screen">
             {/* Header */}
             <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
-                <div className="flex items-center gap-3">
+                <Link to="/roles/apartment-owner" className="flex items-center gap-3">
                     <FaArrowLeft className="cursor-pointer" />
                     <h2 className="text-2xl font-semibold">Unit list details</h2>
-                </div>
+                </Link>
 
                 <div className="flex items-center border rounded-full px-4 py-2 bg-white shadow-sm">
                     <input placeholder="Search" className="outline-none" />

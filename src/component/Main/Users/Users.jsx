@@ -1,207 +1,206 @@
 import { useEffect, useState } from "react";
-import { ConfigProvider, Table, Form, Input, DatePicker } from "antd";
+import { ConfigProvider, Table, Form, Input, DatePicker, Modal } from "antd";
 import moment from "moment";
 import { IoIosSearch } from "react-icons/io";
-import { FaAngleLeft, FaArrowLeft } from "react-icons/fa";
+import { FaAngleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { GoInfo } from "react-icons/go";
 import { IoEyeOutline } from "react-icons/io5";
 
 const { Item } = Form;
 
 const Users = () => {
-  // Demo data (simulating fetched data)
+  /* ---------------- Demo Data ---------------- */
   const demoUserData = [
-    { id: 1, fullName: "John Doe", accountID: "A123", email: "john.doe@example.com", phoneNumber: "123-456-7890", address_line1: "123 Main St", createdAt: "2023-06-10", status: "active", gender: "male", image: { url: "" } },
-    { id: 2, fullName: "Jane Smith", accountID: "A124", email: "jane.smith@example.com", phoneNumber: "987-654-3210", address_line1: "456 Oak St", createdAt: "2023-06-05", status: "inactive", gender: "female", image: { url: "" } },
-    { id: 3, fullName: "Bob Johnson", accountID: "A125", email: "bob.johnson@example.com", phoneNumber: "555-123-4567", address_line1: "789 Pine St", createdAt: "2023-06-15", status: "active", gender: "male", image: { url: "" } },
-    { id: 4, fullName: "Alice Williams", accountID: "A126", email: "alice.williams@example.com", phoneNumber: "444-555-6789", address_line1: "101 Maple St", createdAt: "2023-05-25", status: "active", gender: "female", image: { url: "" } },
-    { id: 5, fullName: "Charlie Brown", accountID: "A127", email: "charlie.brown@example.com", phoneNumber: "222-333-4444", address_line1: "202 Birch St", createdAt: "2023-04-18", status: "inactive", gender: "male", image: { url: "" } },
-    { id: 6, fullName: "David White", accountID: "A128", email: "david.white@example.com", phoneNumber: "111-222-3333", address_line1: "303 Cedar St", createdAt: "2023-06-01", status: "active", gender: "male", image: { url: "" } },
-    { id: 7, fullName: "Eva Green", accountID: "A129", email: "eva.green@example.com", phoneNumber: "999-888-7777", address_line1: "404 Elm St", createdAt: "2023-03-22", status: "inactive", gender: "female", image: { url: "" } },
-    { id: 8, fullName: "Frank Harris", accountID: "A130", email: "frank.harris@example.com", phoneNumber: "333-444-5555", address_line1: "505 Birchwood St", createdAt: "2023-06-10", status: "active", gender: "male", image: { url: "" } },
+    {
+      id: 1,
+      renterName: "John Doe",
+      email: "john.doe@example.com",
+      phoneNumber: "123-456-7890",
+      apartmentAssigned: "Driftwood Apartment",
+      joiningDate: "2023-06-10",
+    },
+    {
+      id: 2,
+      renterName: "Jane Smith",
+      email: "jane.smith@example.com",
+      phoneNumber: "987-654-3210",
+      apartmentAssigned: "Sunset Residency",
+      joiningDate: "2023-06-05",
+    },
+    {
+      id: 3,
+      renterName: "Bob Johnson",
+      email: "bob.johnson@example.com",
+      phoneNumber: "555-123-4567",
+      apartmentAssigned: "Ocean View",
+      joiningDate: "2023-06-15",
+    },
   ];
 
+  /* ---------------- States ---------------- */
   const [searchText, setSearchText] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [dataSource, setDataSource] = useState(demoUserData); // Initialize with demo data
+  const [dataSource, setDataSource] = useState(demoUserData);
 
-  // User details visibility state
-  const [detailsVisible, setDetailsVisible] = useState(false);
-  const [userDataFull, setUserDataFull] = useState(null); // Store full user data for the selected user
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
-  // Search Filter
+  /* ---------------- Filters ---------------- */
   useEffect(() => {
-    if (searchText.trim() === "") {
-      setDataSource(demoUserData); // Reset to all users
-    } else {
-      setDataSource(
-        demoUserData.filter(
-          (user) =>
-            user.fullName?.toLowerCase().includes(searchText.toLowerCase()) ||
-            user.email?.toLowerCase().includes(searchText.toLowerCase()) ||
-            String(user.phoneNumber).includes(searchText)
-        )
+    let filtered = demoUserData;
+
+    if (searchText) {
+      filtered = filtered.filter(
+        (u) =>
+          u.renterName.toLowerCase().includes(searchText.toLowerCase()) ||
+          u.email.toLowerCase().includes(searchText.toLowerCase()) ||
+          u.phoneNumber.includes(searchText)
       );
     }
-  }, [searchText]);
 
-  // Date Filter
-  useEffect(() => {
-    if (!selectedDate) {
-      setDataSource(demoUserData); // Reset to all users if no date is selected
-    } else {
-      const formattedDate = selectedDate.format("YYYY-MM-DD");
-      setDataSource(
-        demoUserData.filter(
-          (user) => moment(user.createdAt).format("YYYY-MM-DD") === formattedDate
-        )
+    if (selectedDate) {
+      const date = selectedDate.format("YYYY-MM-DD");
+      filtered = filtered.filter(
+        (u) => moment(u.joiningDate).format("YYYY-MM-DD") === date
       );
     }
-  }, [selectedDate]);
 
-  const handleShowDetails = (user) => {
-    setUserDataFull(user); // Set the selected user details
-    setDetailsVisible(true); // Show user details section
-  };
+    setDataSource(filtered);
+  }, [searchText, selectedDate]);
 
+  /* ---------------- Table Columns ---------------- */
   const columns = [
-    { title: "#SI", dataIndex: "si", key: "si" },
-    { title: "Full Name", dataIndex: "fullName", key: "fullName" },
-    { title: "Email", dataIndex: "email", key: "email" },
-    { title: "Phone Number", dataIndex: "phoneNumber", key: "phoneNumber" },
     {
-      title: "Joined Date",
-      dataIndex: "createdAt",
-      key: "createdAt",
+      title: "No",
+      render: (_, __, index) => index + 1,
+    },
+    {
+      title: "Renter Name",
+      dataIndex: "renterName",
+    },
+    {
+      title: "Email",
+      dataIndex: "email",
+    },
+    {
+      title: "Phone Number",
+      dataIndex: "phoneNumber",
+    },
+    {
+      title: "Apartment Assigned",
+      dataIndex: "apartmentAssigned",
+    },
+    {
+      title: "Joining Date",
+      dataIndex: "joiningDate",
       render: (date) => moment(date).format("DD MMM YYYY"),
     },
     {
       title: "Action",
-      key: "action",
       render: (_, record) => (
-        <div onClick={() => handleShowDetails(record)} className="cursor-pointer">
-          <IoEyeOutline className="text-2xl" />
-        </div>
+        <IoEyeOutline
+          className="text-2xl cursor-pointer"
+          onClick={() => {
+            setSelectedUser(record);
+            setIsModalOpen(true);
+          }}
+        />
       ),
     },
   ];
 
   return (
     <section>
+      {/* ---------- Header ---------- */}
       <div className="md:flex justify-between items-center py-6 mb-4">
-        <Link to={"/"} className="text-2xl flex items-center">
-          <FaAngleLeft />  User list  {detailsVisible ? "Details" : ""}
+        <Link to="/" className="text-2xl flex items-center gap-2">
+          <FaAngleLeft /> Renter List
         </Link>
-        <Form layout="inline" className="flex space-x-4">
 
-          <Item name="date">
+        <Form layout="inline" className="flex gap-1 mt-4 md:mt-0">
+          <Item>
             <DatePicker
-              className="rounded-md border border-[#92b8c0]"
-              onChange={(date) => setSelectedDate(date)}
+              onChange={setSelectedDate}
               placeholder="Select Date"
-            />
-          </Item>
-          <Item name="username">
-            <Input
-              className="rounded-md w-[70%] md:w-full border border-[#92b8c0]"
-              placeholder="User Name"
-              onChange={(e) => setSearchText(e.target.value)}
+              className="border border-[#2cb5eb]"
             />
           </Item>
           <Item>
-            <button className="size-8 rounded-full flex justify-center items-center bg-[#92b8c0] text-black">
-              <IoIosSearch className="size-5" />
+            <Input
+              placeholder="Search Renter"
+              onChange={(e) => setSearchText(e.target.value)}
+              className="border border-[#2cb5eb]"
+            />
+          </Item>
+          <Item>
+            <button className="size-8 rounded-full bg-[#2cb5eb] text-white flex items-center justify-center">
+              <IoIosSearch />
             </button>
           </Item>
         </Form>
       </div>
 
-      <div className={`${detailsVisible ? "grid lg:grid-cols-2 gap-5" : "block"} duration-500`}>
-        <ConfigProvider
-          theme={{
-            components: {
-              Table: {
-                headerBg: "#72cdf2",
-                headerColor: "#fff",
-                headerBorderRadius: 5,
-              },
+      {/* ---------- Table ---------- */}
+      <ConfigProvider
+        theme={{
+          components: {
+            Table: {
+              headerBg: "#72cdf2",
+              headerColor: "#fff",
             },
+          },
+        }}
+      >
+        <Table
+          columns={columns}
+          dataSource={dataSource}
+          rowKey="id"
+          pagination={{
+            current: currentPage,
+            onChange: setCurrentPage,
+            position: ["bottomCenter"],
           }}
-        >
-          <Table
-            pagination={{
-              position: ["bottomCenter"],
-              current: currentPage,
-              onChange: setCurrentPage,
-            }}
-            scroll={{ x: "max-content" }}
-            responsive={true}
-            columns={columns}
-            dataSource={dataSource}
-            rowKey="id"
-            loading={false}
-          />
-        </ConfigProvider>
+        />
+      </ConfigProvider>
 
-        {/* User Details Section */}
-        <div className={`${detailsVisible ? "block" : "hidden"} duration-500`}>
-          <div className=" w-full md:w-2/4 mx-auto border-2 border-[#39ceec] p-2 rounded-lg relative">
-
-            <div onClick={() => setDetailsVisible(false)} className="absolute bg-[#39ceec] p-3 rounded-full -top-5 -left-5 cursor-pointer" >
-              <FaArrowLeft className="text-2xl" />
-            </div>
-
-            {/* User Profile Section */}
-            <div className="flex items-center justify-between gap-5 mb-5">
-              <div className="flex items-center gap-5">
-                <img
-                  className="w-24 h-24 rounded-full"
-                  src="../../../public/logo/userimage.png"
-                  alt="User"
-                />
-                <h1 className="text-2xl font-semibold">{userDataFull?.fullName}</h1>
-              </div>
-
-            </div>
-
-            {/* User Details Section */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between py-3 border-b-2 border-[#00000042]">
-                <span className="font-semibold">Name</span>
-                <span>{userDataFull?.fullName}</span>
-              </div>
-              <div className="flex items-center justify-between py-3 border-b-2 border-[#00000042]">
-                <span className="font-semibold">Email</span>
-                <span>{userDataFull?.email}</span>
-              </div>
-              <div className="flex items-center justify-between py-3 border-b-2 border-[#00000042]">
-                <span className="font-semibold">Status</span>
-                <span>{userDataFull?.status}</span>
-              </div>
-              <div className="flex items-center justify-between py-3 border-b-2 border-[#00000042]">
-                <span className="font-semibold">Phone Number</span>
-                <span>{userDataFull?.phoneNumber}</span>
-              </div>
-              <div className="flex items-center justify-between py-3 border-b-2 border-[#00000042]">
-                <span className="font-semibold">User Type</span>
-                <span>{userDataFull?.gender}</span>
-              </div>
-              <div className="flex items-center justify-between py-3 border-b-2 border-[#00000042]">
-                <span className="font-semibold">Joining Date</span>
-                <span>{moment(userDataFull?.createdAt).format("DD MMM YYYY")}</span>
-              </div>
-            </div>
+      {/* ---------- Details Modal ---------- */}
+      <Modal
+        open={isModalOpen}
+        onCancel={() => setIsModalOpen(false)}
+        footer={null}
+        title="Renter Details"
+        width={600}
+      >
+        {selectedUser && (
+          <div className="space-y-3">
+            <Detail label="Renter Name" value={selectedUser.renterName} />
+            <Detail label="Email" value={selectedUser.email} />
+            <Detail label="Phone Number" value={selectedUser.phoneNumber} />
+            <Detail
+              label="Apartment Assigned"
+              value={selectedUser.apartmentAssigned}
+            />
+            <Detail
+              label="Joining Date"
+              value={moment(selectedUser.joiningDate).format("DD MMM YYYY")}
+            />
+            <button>
+              <Detail label="Account details" value={selectedUser.phoneNumber} />
+            </button>
           </div>
-
-
-        </div>
-
-
-      </div>
+        )}
+      </Modal>
     </section>
   );
 };
+
+/* ---------- Helper Row ---------- */
+const Detail = ({ label, value }) => (
+  <div className="flex justify-between border-b py-2">
+    <span className="font-semibold">{label}</span>
+    <span>{value}</span>
+  </div>
+);
 
 export default Users;

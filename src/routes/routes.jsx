@@ -11,7 +11,7 @@ import SettingsPage from "../page/Settings/SettingsPage";
 import PrivacyPolicyPage from "../page/PrivacyPolicy/PrivacyPolicyPage";
 import TermsconditionPage from "../page/TermsCondition/TermsconditionPage";
 import AboutUsPage from "../page/AboutUs/AboutUsPage";
-import UsersPage from "../page/Users/UsersPage";
+import UsersPage from "../page/RenterUserList/RenterUserList";
 // import AddItemPage from "../page/AddItem/AddItemPage";
 import Notification from "../component/Main/Notification/Notification";
 import EditPersonalInformationPage from "../page/EditPersonalInformationPage/EditPersonalInformationPage";
@@ -65,6 +65,7 @@ import MonthlyBillStatment from "../page/MonthlyBillStatment/MonthlyBillStatment
 import MonthlyBillStatmentDetails from "../page/MonthlyBillStatment/MonthlyBillStatmentDetails";
 import AllRoles from "../page/AllRoles/AllRoles";
 import ApartmentdetailsUnitlistdetails from "../component/ApartmentOwner/ApartmentdetailsUnitlistdetails";
+import RenterUserList from "../page/RenterUserList/RenterUserList";
 
 
 
@@ -103,18 +104,16 @@ const router = createBrowserRouter([
         element: <ApartmentdetailsUnitlistdetails />,
       },
 
-
-
-
-
       {
-        path: "users",
-        element: <UsersPage />,
+        path: "roles/renter-user",
+        element: <RenterUserList />,
       },
       {
+
         path: "users/:id",
         element: <UserDetails />,
       },
+      
 
       {
         path: "agent",

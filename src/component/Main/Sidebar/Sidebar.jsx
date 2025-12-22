@@ -33,59 +33,48 @@ const sidebarItems = [
     icon: <FaUserAlt className="size-5" />,
   },
   // {
-  //   path: "/users",
+  //   path: "/",
   //   name: "User list",
   //   icon: <FaUserAlt className="size-5" />,
   // },
 
+
+
+
   // {
-  //   path: "/apartment-owner",
-  //   name: "Apartment  Woners",
-  //   icon: <BiSolidSchool className="size-6" />,
+  //   path: "/apartment-create",
+  //   name: "Apartment Create",
+  //   icon: <PiBuildingApartmentLight className="size-6" />,
+  // },
+  // {
+  //   path: "/admins",
+  //   name: "All Admins",
+  //   icon: <FaUsersCog className="size-6" />,
+  // },
+
+  // {
+  //   path: "/maintenance-crew",
+  //   name: "Create Crew",
+  //   icon: <FaUsers className="size-6" />,
+  // },
+  // {
+  //   path: "/apartment-creator",
+  //   name: "Submission fee list",
+  //   icon: <IoDiamondOutline className="size-6" />,
   // },
 
 
-  {
-    path: "/apartment-create",
-    name: "Apartment Create",
-    icon: <PiBuildingApartmentLight className="size-6" />,
-  },
-  {
-    path: "/admins",
-    name: "All Admins",
-    icon: <FaUsersCog className="size-6" />,
-  },
-
-  {
-    path: "/maintenance-crew",
-    name: "Create Crew",
-    icon: <FaUsers className="size-6" />,
-  },
-  {
-    path: "/apartment-creator",
-    name: "Submission fee list",
-    icon: <IoDiamondOutline className="size-6" />,
-  },
-
-
-
-
-  {
-    path: "/agent",
-    name: "Agent List",
-    icon: <FaUsers className="size-6" />,
-  },
   // {
-  //   path: "/apartment-owner",
-  //   name: "Apartment Owner",
-  //   icon: <MdOutlineHomeWork className="size-6" />,
+  //   path: "/agent",
+  //   name: "Agent List",
+  //   icon: <FaUsers className="size-6" />,
   // },
 
-  {
-    path: "/monthly-bill-statement",
-    name: "Monthly Bill Statement",
-    icon: <HiClipboardDocumentCheck className="size-6" />,
-  },
+  // {
+  //   path: "/monthly-bill-statement",
+  //   name: "Monthly Bill Statement",
+  //   icon: <HiClipboardDocumentCheck className="size-6" />,
+  // },
 
 
 

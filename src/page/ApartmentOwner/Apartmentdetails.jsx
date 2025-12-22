@@ -23,7 +23,7 @@ const Apartmentdetails = () => {
 
     return (
         <div>
-            <Link to={"/apartment-owner"} className="text-2xl flex items-center mt-10">
+            <Link to={"/roles/apartment-owner"} className="text-2xl flex items-center mt-10">
                 <FaAngleLeft />  Apartment details
             </Link>
 

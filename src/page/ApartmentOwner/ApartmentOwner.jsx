@@ -98,7 +98,7 @@ const ApartmentOwner = () => {
         <section>
             {/* ---------- Header ---------- */}
             <div className="md:flex justify-between items-center py-6 mb-4">
-                <Link to="/" className="text-2xl flex items-center gap-2">
+                <Link to="/roles" className="text-2xl flex items-center gap-2">
                     <FaAngleLeft /> Apartment Creator List
                 </Link>
 
