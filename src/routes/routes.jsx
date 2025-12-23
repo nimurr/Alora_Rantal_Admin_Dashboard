@@ -194,6 +194,8 @@ const router = createBrowserRouter([
         path: "apartment-create/create",
         element: <ApartmentCreateAddNew />,
       },
+
+      
       {
         path: "admins",
         element: <AllAdmins />,

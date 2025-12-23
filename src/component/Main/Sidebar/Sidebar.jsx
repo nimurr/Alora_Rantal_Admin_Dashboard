@@ -32,6 +32,13 @@ const sidebarItems = [
     name: "Roles",
     icon: <FaUserAlt className="size-5" />,
   },
+  {
+    path: "/admins",
+    name: "Sub Admin list",
+    icon: <FaUsersCog className="size-6" />,
+  },
+
+
   // {
   //   path: "/",
   //   name: "User list",
@@ -45,11 +52,6 @@ const sidebarItems = [
   //   path: "/apartment-create",
   //   name: "Apartment Create",
   //   icon: <PiBuildingApartmentLight className="size-6" />,
-  // },
-  // {
-  //   path: "/admins",
-  //   name: "All Admins",
-  //   icon: <FaUsersCog className="size-6" />,
   // },
 
   // {
