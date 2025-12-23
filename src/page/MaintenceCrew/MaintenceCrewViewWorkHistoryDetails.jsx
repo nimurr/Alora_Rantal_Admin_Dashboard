@@ -9,7 +9,7 @@ export default function MaintenceCrewViewWorkHistoryDetails() {
                 <FaAngleLeft className="text-2xl" />
                 <span className="text-2xl font-semibold">Details</span>
             </Link>
-            <div className='grid grid-cols-3'>
+            <div className='grid xl:grid-cols-3 gap-5'>
                 <div className='border col-span-2 rounded-lg border-gray-200 p-5'>
                     <span className='text-center block'>Apartment Room number</span>
                     <h2 className='text-center block font-semibold mt-2 text-xl'>BG101 (1st floor)</h2>
@@ -47,9 +47,26 @@ export default function MaintenceCrewViewWorkHistoryDetails() {
                             <img className='w-20 rounded-lg' src="/category/category.png" alt="" />
                         </div>
                     </div>
+                    <div className='mt-4'>
+                        <span className='block mb-2 font-semibold'>issue video</span>
+                        <img className='w-full h-44 mt-5 object-cover rounded-lg' src="/category/category.png" alt="" />
+                    </div>
                 </div>
                 <div>
-
+                    <div className='border p-5 rounded-lg'>
+                        <span className='block mb-2 font-semibold'>Maintenance Crew details</span>
+                        <div className='my-3'>
+                            <span>Resolving issue date</span>
+                            <span>Sat 12 April 2025  8.30 PM </span>
+                        </div>
+                        <div className='flex  gap-3 mt-5'>
+                            <img className='w-8 h-8 rounded-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnFRPx77U9mERU_T1zyHcz9BOxbDQrL4Dvtg&s" alt="" />
+                            <div>
+                                <h2 className='font-semibold'>John Doe</h2>
+                                <span className='text-sm'>Maintence Crew</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
