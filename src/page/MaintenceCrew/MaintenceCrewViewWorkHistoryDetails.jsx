@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 export default function MaintenceCrewViewWorkHistoryDetails() {
     return (
         <div>
-            <Link to="/roles/apartment-owner" className="flex items-center gap-2">
+            <Link to="/roles/apartment-owner" className="flex my-5 items-center gap-2">
                 <FaAngleLeft className="text-2xl" />
                 <span className="text-2xl font-semibold">Details</span>
             </Link>
-            <div>
-                <div className='border border-gray-200 p-5'>
+            <div className='grid grid-cols-3'>
+                <div className='border col-span-2 rounded-lg border-gray-200 p-5'>
                     <span className='text-center block'>Apartment Room number</span>
                     <h2 className='text-center block font-semibold mt-2 text-xl'>BG101 (1st floor)</h2>
                     <div className='flex items-center justify-between border-b pb-4 mt-4'>
@@ -41,10 +41,15 @@ export default function MaintenceCrewViewWorkHistoryDetails() {
                     </div>
                     <div className='mt-4'>
                         <span className='block mb-2 font-semibold'>issue image</span>
-                        <div>
-                            <img src="" alt="" />
+                        <div className='flex items-center gap-2'>
+                            <img className='w-20 rounded-lg' src="/category/category.png" alt="" />
+                            <img className='w-20 rounded-lg' src="/category/category.png" alt="" />
+                            <img className='w-20 rounded-lg' src="/category/category.png" alt="" />
                         </div>
                     </div>
+                </div>
+                <div>
+
                 </div>
             </div>
         </div>
