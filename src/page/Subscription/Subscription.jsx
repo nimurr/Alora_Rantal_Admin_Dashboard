@@ -10,6 +10,7 @@ const Subscription = () => {
     const [isEditing, setIsEditing] = useState(false);
     const [subscriptionName, setSubscriptionName] = useState('');
     const [unitType, setUnitType] = useState('1-3 Units');
+    const [manageType, setManageType] = useState('manageStandard');
     const [monthlyType, setMonthlyType] = useState('1');
     const [price, setPrice] = useState('');
     const [id, setId] = useState('');
@@ -145,31 +146,30 @@ const Subscription = () => {
             {/* Subscriptions Grid */}
             <div className="grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 gap-5">
                 {subscriptions.map((subscription) => (
-                    <div key={subscription.id} className="border-2 border-[#2cb5eb]  rounded-lg overflow-hidden">
+                    <div key={subscription.id} className={`   rounded-lg overflow-hidden ${subscription.id % 2 === 0 ? 'border-2 border-[#ff8a4d]' : 'border-2 border-[#2cb5eb]'}`}>
                         <div className='p-5'>
-                            <h2 className=" text-3xl font-semibold text-[#2cb5eb] flex items-center gap-2
-                            ">
-                                <div className='h-10 w-10 rounded-full bg-[#2cb5eb] text-white flex justify-center items-center'>
+                            <h2 className={`text-3xl font-semibold ${subscription.id % 2 === 0 ? 'text-[#ff8a4d]' : 'text-[#2cb5eb]'} flex items-center gap-2`}>
+                                <div className={`h-10 w-10 rounded-full ${subscription.id % 2 === 0 ? 'bg-[#ff8a4d]' : 'bg-[#2cb5eb]'} text-white flex justify-center items-center`}>
                                     <AiFillCrown className="size-6" />
                                 </div>
                                 {subscription.name}
                             </h2>
                             <h3 className='text-2xl font-semibold mt-5'>Unite type</h3>
-                            <p className=" mt-2 font-semibold text-xl gap-2   flex items-center"><FaRegCircleCheck className='text-[#2cb5eb]' /> {subscription.unitType}</p>
+                            <p className=" mt-2 font-semibold text-xl gap-2   flex items-center"><FaRegCircleCheck className={`${subscription.id % 2 === 0 ? 'text-[#ff8a4d]' : 'text-[#2cb5eb]'}`} /> {subscription.unitType}</p>
                         </div>
-                        <div className='border-t-2 border-b-2 border-[#2cb5eb] py-2 text-center my-3'>
-                            <p className=" text-5xl font-semibold text-[#2cb5eb] gap-2  ">  {subscription.price} <span className='text-base font-semibold text-black '>/ {subscription.type}</span></p>
+                        <div className={`border-t-2 border-b-2 ${subscription.id % 2 === 0 ? 'border-[#ff8a4d]' : 'border-[#2cb5eb]'} py-2 text-center my-3`}>
+                            <p className={`text-5xl font-semibold ${subscription.id % 2 === 0 ? 'text-[#ff8a4d]' : 'text-[#2cb5eb]'} gap-2 `}>  {subscription.price} <span className='text-base font-semibold text-black '>/ {subscription.type}</span></p>
                         </div>
                         <div className=" gap-3 p-5 ">
                             <button
                                 onClick={() => handleDelete(subscription)}
-                                className="w-full py-3 mb-2 px-6 border border-[#2cb5eb] text-[#2cb5eb] rounded-lg"
+                                className={`w-full py-3 mb-2 px-6 border ${subscription.id % 2 === 0 ? 'border-[#ff8a4d] text-[#ff8a4d]' : 'border-[#2cb5eb] text-[#2cb5eb]'} rounded-lg`}
                             >
                                 Delete
                             </button>
                             <button
                                 onClick={() => showModal(true, subscription)}
-                                className="w-full py-3 px-6 border bg-[#2cb5eb] text-white rounded-lg"
+                                className={`w-full py-3 px-6 border ${subscription.id % 2 === 0 ? 'bg-[#ff8a4d] text-[#ffffff]' : 'border-[#2cb5eb] bg-[#2cb5eb]'} text-white rounded-lg`}
                             >
                                 Edit Package
                             </button>
@@ -205,6 +205,18 @@ const Subscription = () => {
                             <Select.Option value="1-3 Units">1 - 3 Units</Select.Option>
                             <Select.Option value="4-6 Units">4 - 6 Units</Select.Option>
                             <Select.Option value="7+ Units">7+ Units</Select.Option>
+                        </Select>
+                    </div>
+
+                    <div className="my-3">
+                        <span className="block mb-2 font-semibold">Manage Type</span>
+                        <Select
+                            className="w-full"
+                            value={manageType}
+                            onChange={(value) => setManageType(value)}
+                        >
+                            <Select.Option value="manageStandard">Manage Standard </Select.Option>
+                            <Select.Option value="manageDeluxe">Manage Deluxe</Select.Option>
                         </Select>
                     </div>
 
