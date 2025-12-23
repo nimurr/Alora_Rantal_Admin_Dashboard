@@ -58,7 +58,7 @@ import Agentcreate from "../page/Agent/Agentcreate";
 import CaintenanceCrew from "../page/CaintenanceCrew/CaintenanceCrew";
 import CaintenanceCrewCreate from "../page/CaintenanceCrew/CaintenanceCrewCreate";
 import AllAdmins from "../page/Admins/AllAdmins";
-import AllAdminsCreate from "../page/Admins/AllAdminsCreate";
+import AllAdminsCreate from "../page/Admins/AllAdminsDetails";
 import ApartmentList from "../page/ApartmentList/ApartmentList";
 import ApartmentListDetails from "../page/ApartmentList/ApartmentListDetails";
 import MonthlyBillStatment from "../page/MonthlyBillStatment/MonthlyBillStatment";
@@ -71,6 +71,7 @@ import MaintenceCrew from "../page/MaintenceCrew/MaintenceCrew";
 import MaintenceCrewViewWorkHistory from "../page/MaintenceCrew/MaintenceCrewViewWorkHistory";
 import MaintenceCrewViewWorkHistoryDetails from "../page/MaintenceCrew/MaintenceCrewViewWorkHistoryDetails";
 import Agents from "../page/Agents/Agents";
+import AllAdminsDetails from "../page/Admins/AllAdminsDetails";
 
 
 
@@ -195,14 +196,14 @@ const router = createBrowserRouter([
         element: <ApartmentCreateAddNew />,
       },
 
-      
+
       {
         path: "admins",
         element: <AllAdmins />,
       },
       {
-        path: "admins/create",
-        element: <AllAdminsCreate />,
+        path: "admins/details/:id",
+        element: <AllAdminsDetails />,
       },
 
 

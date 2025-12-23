@@ -102,12 +102,6 @@ const AllAdmins = () => {
                 </Link>
 
                 <div className="flex items-center gap-4 flex-wrap">
-                    <Link
-                        to="/admins/create"
-                        className="bg-[#2cb5eb] text-white py-2 px-6 rounded flex items-center gap-2"
-                    >
-                        <IoMdPersonAdd /> Add Admin
-                    </Link>
                     <Form layout="inline" className="">
                         <Item>
                             <DatePicker
@@ -184,16 +178,16 @@ const AllAdmins = () => {
                         />
 
                         {/* Apartment Count */}
-                        <div className="flex justify-between items-center border p-3 rounded-md">
+                        <Link to={`/admins/details/${selectedAdmin.id}`} className="flex justify-between items-center border p-3 rounded-md">
                             <span className="font-semibold">
                                 Apartment Total Create (01)
                             </span>
                             <IoEyeOutline className="text-xl cursor-pointer" />
-                        </div>
+                        </Link>
 
                         {/* Actions */}
                         <div className="space-y-3 pt-4">
-                            <button className="w-full border border-[#2cb5eb] bg-[#2cb5eb1f] py-2 rounded-lg">
+                            <button className="w-full bg-[#2cb5eb] text-white py-2 rounded-lg">
                                 Manage Permissions and Changes
                             </button>
                             <button className="w-full bg-red-500 text-white py-2 rounded-lg">
