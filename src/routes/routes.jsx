@@ -70,6 +70,7 @@ import RenterUserListAddPersonalixeFee from "../page/RenterUserList/RenterUserLi
 import MaintenceCrew from "../page/MaintenceCrew/MaintenceCrew";
 import MaintenceCrewViewWorkHistory from "../page/MaintenceCrew/MaintenceCrewViewWorkHistory";
 import MaintenceCrewViewWorkHistoryDetails from "../page/MaintenceCrew/MaintenceCrewViewWorkHistoryDetails";
+import Agents from "../page/Agents/Agents";
 
 
 
@@ -125,7 +126,6 @@ const router = createBrowserRouter([
         path: "roles/maintence-crew",
         element: <MaintenceCrew />,
       },
-
       {
         path: "roles/maintence-crew/view-work-history/:id",
         element: <MaintenceCrewViewWorkHistory />,
@@ -135,6 +135,10 @@ const router = createBrowserRouter([
         element: <MaintenceCrewViewWorkHistoryDetails />,
       },
 
+      {
+        path: "roles/agents",
+        element: <Agents />,
+      },
 
 
       {

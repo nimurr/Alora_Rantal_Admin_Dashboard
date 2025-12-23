@@ -1,7 +1,7 @@
-import React from 'react'
-import { FaAngleLeft, FaPhone } from 'react-icons/fa6'
-import { MdEmail } from 'react-icons/md'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { FaAngleLeft, FaPhone } from 'react-icons/fa6';
+import { MdEmail } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 export default function MaintenceCrewViewWorkHistoryDetails() {
     return (
