@@ -36,7 +36,8 @@ export default function MaintenceCrewViewWorkHistory() {
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 {units.map((unit) => (
-                    <div
+                    <Link 
+                        to={`/roles/maintence-crew/view-work-history/details/${unit.id}`}
                         key={unit.id}
                         className="bg-white rounded-xl border shadow-sm overflow-hidden"
                     >
@@ -81,7 +82,7 @@ export default function MaintenceCrewViewWorkHistory() {
 
 
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 

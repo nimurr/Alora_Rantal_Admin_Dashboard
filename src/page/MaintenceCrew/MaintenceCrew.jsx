@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { ConfigProvider, Table, Form, Input, DatePicker, Modal } from "antd";
 import moment from "moment";
 import { IoIosSearch } from "react-icons/io";
-import { FaAngleLeft, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaAngleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { IoEyeOutline, IoPencilOutline } from "react-icons/io5";
+import { IoEyeOutline, IoPencilOutline, IoSearch } from "react-icons/io5";
 
 const { Item } = Form;
 
@@ -38,6 +38,15 @@ const MaintenanceCrew = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedCrew, setSelectedCrew] = useState(null);
 
+    /* -------------------- Manage Assigned Apartment Modal -------------------- */
+    const [isModalOpenForManageAssigned, setIsModalOpenForManageAssigned] =
+        useState(false);
+
+    const showModalForManageAssigned = (crew) => {
+        setSelectedCrew(crew);
+        setIsModalOpenForManageAssigned(true);
+    };
+
     /* -------------------- Filters -------------------- */
     useEffect(() => {
         let filteredData = demoCrewData;
@@ -54,7 +63,8 @@ const MaintenanceCrew = () => {
         if (selectedDate) {
             const date = selectedDate.format("YYYY-MM-DD");
             filteredData = filteredData.filter(
-                (crew) => moment(crew.joiningDate).format("YYYY-MM-DD") === date
+                (crew) =>
+                    moment(crew.joiningDate).format("YYYY-MM-DD") === date
             );
         }
 
@@ -181,15 +191,76 @@ const MaintenanceCrew = () => {
                         />
                         <Detail
                             label="Joining Date"
-                            value={moment(selectedCrew.joiningDate).format("DD MMM YYYY")}
+                            value={moment(selectedCrew.joiningDate).format(
+                                "DD MMM YYYY"
+                            )}
                         />
+
                         <div className="space-y-3">
-                            <Link to="/roles/maintence-crew/view-work-history/14" className="border w-full border-[#72cdf2] bg-[#72cef259] py-2 px-4 block text-center rounded-lg">View Work History</Link>
-                            <button className="border border-[#72cdf2] bg-[#72cef259] py-2 px-4 w-full text-center rounded-lg">Manage Assigned Apartment</button>
-                            <button className="bg-[#72cdf2] text-white py-2 px-4 w-full text-center rounded-lg">Delete Role</button>
+                            <Link
+                                to="/roles/maintence-crew/view-work-history/14"
+                                className="border w-full border-[#72cdf2] bg-[#72cef259] py-2 px-4 block text-center rounded-lg"
+                            >
+                                View Work History
+                            </Link>
+
+                            <button
+                                onClick={() =>
+                                    showModalForManageAssigned(selectedCrew)
+                                }
+                                className="border border-[#72cdf2] bg-[#72cef259] py-2 px-4 w-full rounded-lg"
+                            >
+                                Manage Assigned Apartment
+                            </button>
+
+                            <button className="bg-[#72cdf2] text-white py-2 px-4 w-full rounded-lg">
+                                Delete Role
+                            </button>
                         </div>
                     </div>
                 )}
+            </Modal>
+
+            {/* -------------------- Manage Assigned Apartment Modal -------------------- */}
+            <Modal
+                open={isModalOpenForManageAssigned}
+                onCancel={() => setIsModalOpenForManageAssigned(false)}
+                footer={null}
+                width={600}
+                title="Manage Assigned Apartment"
+            >
+                <div className="relative w-full">
+                    <input
+                        type="text"
+                        placeholder="Search Apartment"
+                        className="w-full py-3 pl-12 pr-4 rounded-lg border border-gray-300 
+               focus:outline-none focus:ring-2 focus:ring-[#72cdf2] 
+               focus:border-[#72cdf2]"
+                    />
+                    <IoSearch
+                        className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 text-xl"
+                    />
+                </div>
+
+                <div>
+                    <ul className="mt-4 max-h-72 overflow-y-auto">
+                        {["A101", "B202", "C303"].map((apartment) => (
+                            <li
+                                key={apartment}
+                                className="p-3 hover:bg-[#72cef256] px-5 border border-gray-200 "
+                            >
+                                <h2>Sun City</h2>
+                                <p>100 Glenwood Ave, San Diego CA, 92152</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <p className="text-orange-400 text-base font-semibold">You selected: Sun City, 100 Glenwood Ave, San Diego CA.</p>
+                <div className="flex items-center justify-end gap-2">
+                    <button className="bg-[#72cdf2] text-white py-2 px-4 rounded-lg">Add User</button>
+                    <button onClick={() => setIsModalOpenForManageAssigned(false)} className="border border-[#72cdf2] py-2 px-4 rounded-lg">Cancel</button>
+                </div>
+
             </Modal>
         </section>
     );
