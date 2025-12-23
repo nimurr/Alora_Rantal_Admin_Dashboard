@@ -38,6 +38,11 @@ const sidebarItems = [
     icon: <FaUsersCog className="size-6" />,
   },
 
+  {
+    path: "/manage-apartments",
+    name: "Manage Apartments",
+    icon: <PiBuildingApartmentLight className="size-6" />,
+  },
 
   // {
   //   path: "/",
@@ -48,11 +53,6 @@ const sidebarItems = [
 
 
 
-  // {
-  //   path: "/apartment-create",
-  //   name: "Apartment Create",
-  //   icon: <PiBuildingApartmentLight className="size-6" />,
-  // },
 
   // {
   //   path: "/maintenance-crew",

@@ -44,7 +44,7 @@ import Personalinfo from "../page/ProfileInfo/Personalinfo";
 import PersonalinfoEdit from "../page/ProfileInfo/PersonalinfoEdit";
 import AllFaq from "../page/Faq/AllFaq";
 import AllDocument from "../component/Main/AllDocument/AllDocument";
-import Lawyera from "../page/Lawyer/Lawyera";
+import Lawyera from "../page/Lawyer/ManageAppartments";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import ApartmentCreatorCreate from "../page/Lawyer/ApartmentCreatorCreate";
 import ApartmentOwner from "../page/ApartmentOwner/ApartmentOwner";
@@ -72,6 +72,9 @@ import MaintenceCrewViewWorkHistory from "../page/MaintenceCrew/MaintenceCrewVie
 import MaintenceCrewViewWorkHistoryDetails from "../page/MaintenceCrew/MaintenceCrewViewWorkHistoryDetails";
 import Agents from "../page/Agents/Agents";
 import AllAdminsDetails from "../page/Admins/AllAdminsDetails";
+import ManageAppartments from "../page/Lawyer/ManageAppartments";
+import ManageAppartmentsView from "../page/Lawyer/ManageAppartmentsView";
+import ManageAppartmentsViewDetails from "../page/Lawyer/ManageAppartmentsViewDetails";
 
 
 
@@ -135,11 +138,30 @@ const router = createBrowserRouter([
         path: "roles/maintence-crew/view-work-history/details/:id",
         element: <MaintenceCrewViewWorkHistoryDetails />,
       },
-
       {
         path: "roles/agents",
         element: <Agents />,
       },
+
+
+      {
+        path: "manage-apartments",
+        element: <ManageAppartments />,
+      },
+
+      {
+        path: "manage-apartments/view/:id",
+        element: <ManageAppartmentsView />,
+      },
+      {
+        path: "manage-apartments/view/details/:id",
+        element: <ManageAppartmentsViewDetails />,
+      },
+      {
+        path: "manage-apartments/create",
+        element: <ApartmentCreatorCreate />,
+      },
+
 
 
       {
@@ -171,15 +193,7 @@ const router = createBrowserRouter([
         element: <ApartmentListDetails />,
       },
 
-      {
-        path: "apartment-creator",
-        element: <Lawyera />,
-      },
 
-      {
-        path: "apartment-creator/create",
-        element: <ApartmentCreatorCreate />,
-      },
 
 
       {
