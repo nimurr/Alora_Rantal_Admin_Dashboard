@@ -75,6 +75,7 @@ import AllAdminsDetails from "../page/Admins/AllAdminsDetails";
 import ManageAppartments from "../page/Lawyer/ManageAppartments";
 import ManageAppartmentsView from "../page/Lawyer/ManageAppartmentsView";
 import ManageAppartmentsViewDetails from "../page/Lawyer/ManageAppartmentsViewDetails";
+import AllUsers from "../page/Users/AllUsers";
 
 
 
@@ -229,6 +230,11 @@ const router = createBrowserRouter([
       {
         path: "monthly-bill-statement/:id",
         element: <MonthlyBillStatmentDetails />,
+      },
+
+      {
+        path: "user-list",
+        element: <AllUsers />,
       },
 
 

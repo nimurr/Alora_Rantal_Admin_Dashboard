@@ -11,7 +11,7 @@ const Subscription = () => {
     const [subscriptionName, setSubscriptionName] = useState('');
     const [unitType, setUnitType] = useState('1-3 Units');
     const [manageType, setManageType] = useState('manageStandard');
-    const [monthlyType, setMonthlyType] = useState('1');
+    const [monthlyType, setMonthlyType] = useState('monthly');
     const [price, setPrice] = useState('');
     const [id, setId] = useState('');
 
@@ -53,7 +53,7 @@ const Subscription = () => {
         } else {
             setSubscriptionName('');
             setUnitType('1-3 Units');
-            setMonthlyType('1');
+            setMonthlyType('monthly');
             setPrice('');
             setId(null);
         }
@@ -227,9 +227,9 @@ const Subscription = () => {
                             value={monthlyType}
                             onChange={(value) => setMonthlyType(value)}
                         >
-                            <Select.Option value="1">Weekly</Select.Option>
-                            <Select.Option value="2">Monthly</Select.Option>
-                            <Select.Option value="3">Yearly</Select.Option>
+                            {/* <Select.Option value="1">Weekly</Select.Option> */}
+                            <Select.Option value="monthly">Monthly</Select.Option>
+                            <Select.Option value="yearly">Yearly</Select.Option>
                         </Select>
                     </div>
 
