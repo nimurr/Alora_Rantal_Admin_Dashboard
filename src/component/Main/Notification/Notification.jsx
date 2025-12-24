@@ -92,19 +92,19 @@ const Notification = () => {
         <FaAngleLeft /> Notification
       </Link>
 
-      <div className="space-y-4">
+      <div className="space-y-2">
         {paginatedNotifications?.map((item) => (
           <div
             key={item.id}
-            className="border border-[#2cb5eb] hover:bg-[#2cb5eb3b] cursor-pointer rounded-md p-4 flex items-center space-x-4"
+            className="border border-[#2cb5eb] hover:bg-[#2cb5eb3b] cursor-pointer rounded-md px-4 py-2 flex items-center gap-4"
           >
             <div className="text-[#2cb5eb] border border-[#2cb5eb] rounded-full p-2">
-              <span className="bg-[#2cb5eb] p-1.5 rounded-full absolute ml-4 z-20"></span>
+              <span className="bg-[#2cb5eb] p-1.5 rounded-full absolute  z-20"></span>
               <IoMdNotificationsOutline size={30} className="relative" />
             </div>
-            <div>
-              <p className="font-semibold">{item?.message}</p>
-              <p className="text-gray-500">{moment(item?.createdAt).fromNow()}</p>
+            <div className="">
+              <p className="font-semibold leading-3">{item?.message}</p>
+              <p className="text-gray-500 leading-3">{moment(item?.createdAt).fromNow()}</p>
             </div>
           </div>
         ))}
