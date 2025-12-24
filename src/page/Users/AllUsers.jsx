@@ -3,6 +3,7 @@ import { Table, ConfigProvider, Input, DatePicker, Form, Modal } from "antd";
 import moment from "moment";
 import { IoIosSearch } from "react-icons/io";
 import { IoEyeOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const AllUsers = () => {
     /* ---------------- Demo Data ---------------- */
@@ -132,9 +133,9 @@ const AllUsers = () => {
                 <h1 className="text-2xl font-semibold">Recent User List</h1>
 
                 <Form className="flex gap-2 items-center flex-wrap">
-                    <button className="bg-[#2cb5eb] text-white min-w-44 py-2 px-8 rounded-md">
+                    <Link to="/user-list/create-user" className="bg-[#2cb5eb] hover:!text-white text-white min-w-44 py-2 px-8 rounded-md">
                         Account create
-                    </button>
+                    </Link>
                     <div className="flex items-center gap-2">
                         <DatePicker
                             placeholder="Select Date"

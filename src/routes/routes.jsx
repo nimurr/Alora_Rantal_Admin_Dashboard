@@ -76,6 +76,7 @@ import ManageAppartments from "../page/Lawyer/ManageAppartments";
 import ManageAppartmentsView from "../page/Lawyer/ManageAppartmentsView";
 import ManageAppartmentsViewDetails from "../page/Lawyer/ManageAppartmentsViewDetails";
 import AllUsers from "../page/Users/AllUsers";
+import UsersCreateByAdmin from "../page/Users/UsersCreateByAdmin";
 
 
 
@@ -235,6 +236,11 @@ const router = createBrowserRouter([
       {
         path: "user-list",
         element: <AllUsers />,
+      },
+
+      {
+        path: "user-list/create-user",
+        element: <UsersCreateByAdmin />,
       },
 
 
