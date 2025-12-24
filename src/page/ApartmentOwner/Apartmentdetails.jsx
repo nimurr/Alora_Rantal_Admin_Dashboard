@@ -30,7 +30,7 @@ const Apartmentdetails = () => {
             <div className='flex items-start gap-10'>
                 <div className='max-w-[70%] my-5'>
                     {/* Apartment Image */}
-                    <img className="w-full h-[300px] rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
+                    <img className="w-full object-cover h-[350px] rounded-lg" src="/Apartment/image-1.jpg" alt="Apartment" />
 
                     {/* Apartment Info */}
                     <div className="flex items-center justify-between my-5">
